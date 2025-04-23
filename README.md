@@ -9,3 +9,6 @@ Fő funkciók
 - Folyton Frissülő idézetek megjelenítése.
 - Saját aktivitás-ajánló API.
 
+Használat:
+- cd backend -> node server.js 
+- npm run dev
