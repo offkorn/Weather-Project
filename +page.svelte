@@ -52,7 +52,7 @@
                     weatherData = weather;
                     city = weather.name;
 
-                    // 3 napos előrejelzés lekérése
+                    // 3 napos előrejelzés
                     const forecastResponse = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`);
                     if (!forecastResponse.ok) throw new Error("Nem sikerült lekérni az előrejelzést!");
                     const forecast = await forecastResponse.json();
@@ -73,7 +73,7 @@
 
         list.forEach(item => {
             const date = new Date(item.dt * 1000);
-            const dayKey = date.toISOString().split('T')[0]; // Csak az YYYY-MM-DD rész
+            const dayKey = date.toISOString().split('T')[0]; 
 
             if (!days[dayKey]) 
             {
@@ -91,7 +91,7 @@
         forecastData = Object.values(days).slice(1, 4);     
         if (forecastData.length > 0) 
         {
-            forecastData[0].dayName = "Tomorrow";       // az elso nap mindig "Tomorrow"
+            forecastData[0].dayName = "Tomorrow";   
         }
     }
 
@@ -127,7 +127,7 @@
     
     <hr style="margin-bottom: 40px;">
 
-    <!-- 3 napos előrejelzés -->
+    <!-- 3 napos forecast -->
     <h2 style="font-size: 25px;"  >3 day forecast</h2>
 
     <div class="forecast-container">
